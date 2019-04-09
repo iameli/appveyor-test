@@ -1,0 +1,11 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+
+install:
+  - docker version
+
+build_script:
+  - docker build -t test-appveyor .
+
+test_script:
+  - docker run test-appveyor echo working
